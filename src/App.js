@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from "react";
 import { ScatterChart, Scatter, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
 
-const SUPABASE_URL      = "https://pjopnhgbidmpzssghy oo.supabase.co";
+const SUPABASE_URL      = "https://pjopnhgbidmpzssghyoo.supabase.co";
 const SUPABASE_ANON_KEY = "sb_publishable_PnzexoDk29yf2mxCjoKplw_NWlP28a6";
 
 const SFRL_URL = "https://sfrlinc.com/web/market-reports/";
