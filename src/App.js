@@ -71,13 +71,10 @@ export default function App() {
   async function triggerScrape() {
     setScraping(true); setScrapeMsg(null);
     try {
-      const res = await fetch("https://livestock-scraper-production.up.railway.app/scrape", {
-        method: "POST",
-        headers: { "Authorization": "Bearer COWS", "Content-Type": "application/json" },
-      });
+      const res = await fetch("/api/trigger-scrape", { method: "POST" });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
-      setScrapeMsg({ ok: true, text: "Scrape started — refresh in ~30 seconds." });
-      setTimeout(() => setScrapeMsg(null), 8000);
+      setScrapeMsg({ ok: true, text: "Scrape started — refresh in ~2 minutes." });
+      setTimeout(() => setScrapeMsg(null), 10000);
     } catch(e) {
       setScrapeMsg({ ok: false, text: `Scrape failed: ${e.message}` });
       setTimeout(() => setScrapeMsg(null), 8000);
